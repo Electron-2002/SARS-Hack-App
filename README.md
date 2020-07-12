@@ -1,3 +1,5 @@
+#SymptoChecker App byu SARS App
+
 There is an optional way to use mobile number this enables the user to skip the step of entering age and gender.
 The app uses Infermedica API that asks the user to enter his/her symptoms, and then we ask some questions according to the signs that patient reports.
 The general questions include patient traits like BMI, behavior, geolocation(to identify location-specific diseases), etc. Then some specific questions are asked, which are based on previous responses.
