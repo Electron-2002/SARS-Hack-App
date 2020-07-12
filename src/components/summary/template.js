@@ -27,16 +27,13 @@ const conditionsHtmlMapper = (conditions) => {
 
 const template = (context) => {
   return context.api.diagnosis(context.patient.toDiagnosis()).then((data) => {
+    context.patient.setDisplayData(data.conditions[0].name);
+    console.log(context.patient.displayData);
     return html`
       <h5 class="card-title">Summary</h5>
       <div class="card-text">
         <p>Based on the interview, you could suffer from:</p>
         ${conditionsHtmlMapper(data.conditions)}
-        <div class="alert alert-warning" role="alert">
-          <i class="fa fa-info-circle"></i>
-          Please note that the list below may not be complete and is provided solely for informational purposes 
-          and is not a qualified medical opinion.
-        </div>
       </div>
     `;
   });

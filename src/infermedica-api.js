@@ -73,4 +73,8 @@ export default class InfermedicaApi {
   explain(data) {
     return this.post('explain', JSON.stringify(data));
   }
+
+  triage(data) {
+    return this.post('triage', JSON.stringify(data));
+  }
 }

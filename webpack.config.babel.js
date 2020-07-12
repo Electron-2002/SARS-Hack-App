@@ -15,7 +15,7 @@ module.exports = {
   devServer: {
     publicPath: '/public/',
     inline: true,
-    host: '127.0.0.1'
+    host: 'localhost'
   },
   resolve: {
     extensions: ['.js', '.json']
@@ -42,7 +42,7 @@ module.exports = {
         }
       }, {
         test: /\.css$/,
-        use: ['style-loader', {loader: 'css-loader'}]
+        use: ['style-loader', { loader: 'css-loader' }]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

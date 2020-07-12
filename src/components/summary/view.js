@@ -7,15 +7,16 @@ import template from './template';
 
 export default class SummaryView extends View {
   constructor(el, context) {
-    const getExplanationMarkup = (data) => {
+    const getExplanationMarkup = (data1, data2) => {
+      console.log(data2);
       let supporting = '';
       let conflicting = '';
 
-      for (const e of data.supporting_evidence) {
+      for (const e of data1.supporting_evidence) {
         supporting += `<li><i class="text-success fa fa-fw fa-plus-circle"></i> ${e.common_name}</li>`;
       }
 
-      for (const e of data.conflicting_evidence) {
+      for (const e of data1.conflicting_evidence) {
         conflicting += `<li><i class="text-danger fa fa-fw fa-minus-circle"></i> ${e.common_name}</li>`;
       }
 
@@ -33,6 +34,13 @@ export default class SummaryView extends View {
               ${conflicting}
             </ul>
           </div>
+          <div class="alert alert-warning" role="alert">
+          <i class="fa fa-info-circle"></i>
+          Teleconsultaion Applicable: ${data2.teleconsultation_applicable}
+          <div><i class="fa fa-info-circle"></i> Triage Level: ${data2.triage_level}</div>
+          <div>
+          </div>
+        </div>
         </div>
        `;
       return base;
@@ -45,10 +53,18 @@ export default class SummaryView extends View {
 
       if (!el.innerHTML) {
         el.innerHTML = '<i class="fa fa-circle-o-notch fa-spin fa-fw"></i> one second..';
-        context.api.explain(Object.assign(context.patient.toDiagnosis(), {target: id})).then((data) => {
-          el.innerHTML = getExplanationMarkup(data);
-          return el.innerHTML;
-        });
+        context.api.explain(Object.assign(context.patient.toDiagnosis(), {target: id}))
+          .then((data) => {
+            return data;
+          }).then((data1) => {
+            // eslint-disable-next-line promise/no-nesting
+            context.api.triage(Object.assign(context.patient.toDiagnosis()))
+              .then((data2) => {
+                el.innerHTML = getExplanationMarkup(data1, data2);
+                return el.innerHTML;
+              });
+            return '';
+          });
       } else {
         el.innerHTML = '';
       }

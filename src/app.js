@@ -1,7 +1,9 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable promise/always-return */
 /**
  * Created by Tomasz Gabrysiak @ Infermedica on 03/02/2017.
  */
-
+import axios from 'axios';
 import settings from './settings';
 
 import template from './templates/base';
@@ -29,7 +31,14 @@ export default class DemoApp extends App {
     this.views = [
       {
         context: {
-          api: this.api
+          patient: this.patient
+        },
+        view: 'login'
+      },
+      {
+        context: {
+          api: this.api,
+          patient: this.patient
         },
         view: 'welcome'
       },
@@ -80,6 +89,13 @@ export default class DemoApp extends App {
           patient: this.patient
         },
         view: 'summary'
+      },
+      {
+        context: {
+          api: this.api,
+          patient: this.patient
+        },
+        view: 'appointment'
       }
     ];
   }
@@ -97,8 +113,30 @@ export default class DemoApp extends App {
   }
 
   nextStep() {
-    this.currentStep += 1;
-    this.currentStep %= 8;
+    if (this.currentStep === 1 && this.patient.pin != null) {
+      this.currentStep += 2;
+    } else if (this.currentStep === 0 && this.patient.pin != null) {
+      const data = () => axios.get(`https://agile-reaches-72897.herokuapp.com/patient/${this.patient.pin}`)
+        .then(res => {
+          console.log(res);
+          this.patient.setAge(res.data.age);
+          this.patient.setSex(res.data.gender);
+          this.patient.setName(res.data.name);
+        }).catch(err => {
+          console.log(err);
+        });
+
+      data();
+      this.currentStep += 1;
+    } else {
+      this.currentStep += 1;
+    }
+
+    if (this.patient.pin) {
+      this.currentStep %= 10;
+    } else {
+      this.currentStep %= 9;
+    }
 
     const currentView = this.views[this.currentStep];
 

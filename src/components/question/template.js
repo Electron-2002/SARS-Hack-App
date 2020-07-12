@@ -6,10 +6,11 @@ import html from '../../templates/helpers';
 
 const answersGroupSingle = (items) => {
   return html`
+  <br/>
     <form>
       <fieldset class="form-group">
   ${items.map((i) => {
-    return html`              
+    return html`         
         <div class="custom-control custom-radio">
           <input type="radio" id="${i.id}" name="radio" class="custom-control-input">
           <label class="custom-control-label" for="${i.id}">${i.name}</label>
@@ -23,6 +24,7 @@ const answersGroupSingle = (items) => {
 
 const answersGroupMultiple = (items) => {
   return html`
+  <br/>
     <form>
       <fieldset class="form-group">
   ${items.map((i) => {
@@ -40,6 +42,7 @@ const answersGroupMultiple = (items) => {
 
 const answersSingle = () => {
   return html`
+  <br/>
     <div>
       <button type="button" data-value="true" class="next-question btn btn-success">Yes</button>
       <button type="button" data-value="false" class="next-question btn btn-danger">No</button>
@@ -56,6 +59,7 @@ const template = (context) => {
       single: answersSingle
     };
     resolve(html`
+    <br/>
       <h5 class="card-title">${context.question.text}</h5>
       <div class="card-text">
         ${mapper[context.question.type](context.question.items)}

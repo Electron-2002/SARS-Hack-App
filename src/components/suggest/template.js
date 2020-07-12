@@ -25,16 +25,12 @@ const template = (context) => {
       return '<p><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> I am thinking...</p>';
     }
     return html`
+    <br/>
       <h5 class="card-title">Do you have any of the following symptoms?</h5>
       <div class="card-text">
         <form>
           ${symptomHtmlMapper(suggestedSymptoms)}
         </form>
-        <p class="text-muted small">
-          <i class="fa fa-info-circle"></i>
-          This is a list of symptoms suggested by our AI,
-          based on the information gathered so far during the interview.
-        </p>
       </div>
     `;
   });

@@ -40,7 +40,7 @@ export const riskHtmlMapper = (risks, riskFactors) => {
       <div class="custom-control custom-checkbox">
         <input id="${risk.id}" type="checkbox" class="input-risk custom-control-input">
         <label for="${risk.id}" class="custom-control-label custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-          ${risk.name}
+          ${risk.name.split('Recent travel to')[1] || risk.name}
         </label>
       </div>
     `;

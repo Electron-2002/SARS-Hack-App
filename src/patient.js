@@ -9,6 +9,21 @@ export default class Patient {
     this.symptoms = {};
     this.sex = 'male';
     this.age = 30;
+    this.pin = null;
+    this.displayData = null;
+    this.name = '';
+  }
+
+  setDisplayData(data) {
+    this.displayData = data;
+  }
+
+  setName(name) {
+    this.name = name;
+  }
+
+  setPin(pin) {
+    this.pin = pin;
   }
 
   setSex(sex) {
@@ -31,7 +46,10 @@ export default class Patient {
     const res = {
       sex: this.sex,
       age: this.age,
-      evidence: []
+      evidence: [],
+      extras: {
+        enable_triage_5: true
+      }
     };
 
     res.evidence = _.map(this.symptoms, (symptom, symptomId) => {
