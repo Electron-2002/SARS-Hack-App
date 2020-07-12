@@ -5,6 +5,7 @@
 
 const template = (context) => {
   return new Promise((resolve) => {
+    context.patient.setPin(null);
     resolve(`
         
         <br/>

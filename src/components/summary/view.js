@@ -20,6 +20,7 @@ export default class SummaryView extends View {
         conflicting += `<li><i class="text-danger fa fa-fw fa-minus-circle"></i> ${e.common_name}</li>`;
       }
 
+      context.patient.setTriage(data2.triage_level);
       const base = `
         <div class="row">
           <div class="col-6">

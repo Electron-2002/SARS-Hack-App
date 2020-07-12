@@ -12,6 +12,11 @@ export default class Patient {
     this.pin = null;
     this.displayData = null;
     this.name = '';
+    this.triage = '';
+  }
+
+  setTriage(triage) {
+    this.triage = triage;
   }
 
   setDisplayData(data) {
