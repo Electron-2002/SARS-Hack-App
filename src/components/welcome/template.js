@@ -20,7 +20,7 @@ const template = (context) => {
       
       <br/>
       <br/>
-      <a role="button" href="http://sarscovid.herokuapp.com/" class="btn btn-primary">COVID X-Ray</a>
+      <a role="button" target="_blank" href="http://sarscovid.herokuapp.com/" class="btn btn-primary">COVID X-Ray</a>
     </div>
     `);
   });
