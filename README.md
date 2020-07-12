@@ -22,3 +22,23 @@ Contributors to this project
  - [Ritvij Kumar Sharma](https://github.com/ritvij14)
  - [Saransh Anand](https://github.com/fullatron)
  - [Satej Bidvai](https://github.com/Electron-2002/)
+ 
+ ## Installation
+ 
+ This project uses `yarn` as a dependency manager. Ensure that you have `yarn` installed before going to the next step.
+
+`# npm install -g yarn`
+
+### Installing further dependencies with yarn
+
+After making sure that you have `yarn`, please go to the root directory and type:
+
+`yarn install`
+
+This command will install all dependencies necessary to run this project.
+
+### Running the app
+
+To run our app on your computer, please type:
+
+`yarn dev`
