@@ -6,6 +6,10 @@ body {
     background: #354355;
 }
 
+#input-feel {
+    background: #e6edec;
+}
+
 .card {
     border-radius: 0;
     background: #383838;
