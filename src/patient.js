@@ -1,6 +1,3 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 03/02/2017.
- */
 
 import _ from 'lodash';
 

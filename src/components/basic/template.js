@@ -1,10 +1,8 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 08/02/2017.
- */
-
+/* eslint-disable no-tabs */
+/* eslint-disable indent */
 const template = (context) => {
-  return new Promise((resolve) => {
-    resolve(`
+	return new Promise((resolve) => {
+		resolve(`
         <h5 class="card-title">Please select your sex and age.</h5>
         <br/>
         <div class="card-text">
@@ -39,7 +37,7 @@ const template = (context) => {
             </p>
         </div>
       `);
-  });
+	});
 };
 
 export default template;

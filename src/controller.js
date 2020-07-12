@@ -1,6 +1,3 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 14/02/2017.
- */
 
 import Controller from './base/controller';
 

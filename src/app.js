@@ -1,8 +1,6 @@
 /* eslint-disable arrow-parens */
 /* eslint-disable promise/always-return */
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 03/02/2017.
- */
+
 import axios from 'axios';
 import settings from './settings';
 

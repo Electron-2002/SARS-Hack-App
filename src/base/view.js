@@ -1,6 +1,3 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 06/02/2017.
- */
 
 export default class View {
   constructor(el, template, context, binds) {

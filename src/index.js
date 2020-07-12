@@ -1,6 +1,3 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 02/02/2017.
- */
 
 import DemoApp from './app';
 

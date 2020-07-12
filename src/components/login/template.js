@@ -1,7 +1,4 @@
 /* eslint-disable linebreak-style */
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 08/02/2017.
- */
 
 const template = (context) => {
   return new Promise((resolve) => {

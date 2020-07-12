@@ -1,6 +1,3 @@
-/**
- * Created by Tomasz Gabrysiak @ Infermedica on 14/02/2017.
- */
 
 function htmlEscape(str) {
   return str.replace(/&/g, '&amp;')
