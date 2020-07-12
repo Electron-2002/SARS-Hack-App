@@ -1,4 +1,4 @@
-# SymptoChecker App byu SARS App
+# SymptoChecker App by SARS Team
 
 
 
